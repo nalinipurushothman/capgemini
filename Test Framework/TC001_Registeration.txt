@@ -1,0 +1,25 @@
+package com.test.testcases;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.test.pages.LoginPage;
+import com.test.testng.api.base.ProjectSpecificMethods;
+
+public class TC001_Registeration extends ProjectSpecificMethods{
+
+
+	@Test(dataProvider="fetchData")
+	public void createLead(String fName, String lName, String eMail, String password, String address, String city, String state){
+		new LoginPage(driver, eachNode)
+		.enterFirstName(firstName)
+		.enterLastName(lastName)
+		.enterPassword(password)
+		.enterEmail(eMail)
+		.enteraddress(address)
+		.enterCity(city)
+		.enterState(state)
+		.clickRegister()		
+			
+	}
+}

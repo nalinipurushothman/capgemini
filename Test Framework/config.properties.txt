@@ -1,0 +1,12 @@
+//GlobalEnvironment
+
+
+url= http://automationpractice.com/index.php 
+
+
+browser= chrome
+
+extent.reporter.html.start=true
+extent.reporter.html.config=src/main/resources/extent-config.xml
+extent.reporter.html.out=target/cucumber-reports/advanced-reports/extentreports/extent.html
+	

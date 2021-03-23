@@ -1,0 +1,25 @@
+package com.servicenow.qa.runner;
+
+import cucumber.api.CucumberOptions;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
+import cucumber.api.testng.TestNGCucumberRunner;
+
+@CucumberOptions(features =\\path\\registeration.feaure,
+				glue={"stepDefinations"}     //path of step defination file
+				//,format = { "pretty", "json:target/cucumber/cucumber.json" }
+				,plugin = {"json:target/cucumber.json"}
+				,monochrome = true //display the console output in a proper readable format
+				,strict = true //it will check if any step is not defined in step defination
+				,dryRun = true
+				//,tags={"@Test"}
+				)  //to check the mapping is proper between feature file and step defination file.
+
+public class TestRunner extends AbstractTestNGCucumberTests{
+	
+	
+
+}
+
+
+
+

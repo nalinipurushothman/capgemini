@@ -1,0 +1,104 @@
+package com.test.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.test.testng.api.base.ProjectSpecificMethods;
+
+public class RegisterationPage extends ProjectSpecificMethods{
+	
+	public RegisterationPage(RemoteWebDriver driver, ExtentTest eachNode) {
+		this.driver = driver;
+		this.eachNode = eachNode;
+		}
+	
+	public RegisterationPage clickLogin() {
+		WebElement eleLogin = locateElement("class", prop.getProperty("Register.Login.class"));
+		click(eleLogin);
+		return new HomePage(driver, eachNode);
+	}
+
+	public RegisterationPage enterFirstName(String data) {
+		WebElement eleFirstName = locateElement("id", prop.getProperty("Register.fName.id"));
+		clearAndType(eleFirstName, data);
+		return this;
+	}
+	public RegisterationPage enterLastName(String data) {
+		WebElement eleLastName = locateElement("id", prop.getProperty("Register.lName.id"));
+		clearAndType(eleLastName, data);
+		return this;
+	}
+	public RegisterationPage enterEmail(String data) {
+		WebElement eleLastName = locateElement("id", prop.getProperty("Register.eMail.id"));
+		clearAndType(eleLastName, data);
+		return this;
+	
+	public RegisterationPage enterPassword(String data) {
+		WebElement elePassword = locateElement("id", prop.getProperty("Login.pwd.id"));
+		clearAndType(elePassword, data);
+		return this;
+	}
+	public RegisterationPage enterCompanyName(String data) {
+		WebElement eleCompanyName = locateElement("id", prop.getProperty("Register.company.id"));
+		clearAndType(eleCompanyName, data);
+		return this;
+	}	
+	public RegisterationPage enterAddress(String data) {
+		WebElement eleAddress = locateElement("id", prop.getProperty("Register.address.id"));
+		clearAndType(eleAddress, data);
+		return this;
+	}
+	public RegisterationPage enterCountry(String data) {
+		WebElement eleCountry = locateElement("id", prop.getProperty("Register.country.id"));
+		clearAndType(eleCountry, data);
+		return this;
+	}
+	public RegisterationPage enterState(String data) {
+		WebElement eleState = locateElement("id", prop.getProperty("Register.state.id"));
+		clearAndType(eleState, data);
+		return this;
+	}
+
+	public RegisterationPage enterCity(String data) {
+		WebElement eleCity = locateElement("id", prop.getProperty("Register.city.id"));
+		clearAndType(eleCity, data);
+		return this;
+	}
+	public RegisterationPage enterZipcode(String data) {
+		WebElement eleZipcode = locateElement("id", prop.getProperty("Register.zipcode.id"));
+		clearAndType(eleZipcode, data);
+		return this;
+	}
+	
+	public RegisterationPage enterMobileno(String data) {
+		WebElement eleMobileno = locateElement("id", prop.getProperty("Register.mobileno.id"));
+		clearAndType(eleMobileno, data);
+		return this;
+	}
+	
+	
+	
+	public RegisterationPage clickLogInForFailer() {
+		WebElement eleLogin = locateElement("class", prop.getProperty("Login.Login.class"));
+		click(eleLogin);
+		return this;
+	}
+	
+		
+	public RegisterationPage verifyErrorMsg(String data) {
+		WebElement eleVerifyErrMsg = locateElement("xpath", prop.getProperty("Login.Error.xpath"));
+		verifyPartialText(eleVerifyErrMsg, data);
+		return this;
+	}
+	
+}
+
+
+
+
+
+
+
+
+
